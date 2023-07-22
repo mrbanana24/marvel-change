@@ -23,3 +23,11 @@ export const getCharacterById = async (id) => {
   const data = await response.json();
   return data;
 };
+
+export const getComicByCharacterId = async (id) => {
+  const response = await fetch(
+    `${API_BASE_URL}characters/${id}/comics?${query}`
+  );
+  const data = await response.json();
+  return data;
+};

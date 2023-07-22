@@ -1,12 +1,15 @@
-import { getCharacterById } from "../../utils/api";
+import { getCharacterById, getComicByCharacterId } from "../../utils/api";
 import CardDetail from "../../../../components/CardDetail";
-// import CardList from "../../components/CardList";
+import CardList from "../../../../components/CardList";
 import styles from "./CharacterPage.module.css";
+
+// Datos de ejemplo para la lista de cards
 
 const CharacterPage = async ({ params }) => {
   const { id } = params;
   console.log(id);
   const response = await getCharacterById(id);
+  const comics = await getComicByCharacterId(id);
 
   return (
     <div className={styles.container}>
@@ -15,7 +18,9 @@ const CharacterPage = async ({ params }) => {
         <CardDetail character={response.data.results[0]} />
       </div>
       {/* segunda mitad de la pantalla */}
-      <div className={styles.cardList}>{/* <CardList /> */}</div>
+      <div className={styles.cardList}>
+        <CardList data={comics.data.results} />
+      </div>
     </div>
   );
 };
