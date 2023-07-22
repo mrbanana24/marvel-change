@@ -17,9 +17,17 @@ const CardList = ({ data }) => {
   const renderCard = (item) => {
     return (
       <div key={item.id} className={styles.card}>
-        {/* Aquí coloca el contenido de tu card */}
-        <h2>{item.title}</h2>
-        <p>{item.description}</p>
+        <div className={styles.image}>
+          <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
+        </div>
+        <div className={styles.containerContent}>
+          <div className={styles.title}>
+            <h2>{item.title}</h2>
+          </div>
+          <div className={styles.description}>
+            <p>{item.description}</p>
+          </div>
+        </div>
       </div>
     );
   };
