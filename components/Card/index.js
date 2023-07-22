@@ -4,10 +4,9 @@ import styles from "./Card.module.css";
 
 const Card = ({ name, imageUrl }) => {
   return (
-    <div
-      className={styles.card}
-      style={{ backgroundImage: `url(${imageUrl})` }}
-    >
+    <div className={styles.card}>
+      <img src={imageUrl} alt={name} className={styles.image} />
+
       {/*Favorite Star */}
       <div className={styles.icon}>
         <AiOutlineStar size={25} />
