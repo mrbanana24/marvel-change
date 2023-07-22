@@ -2,15 +2,18 @@ import React from "react";
 import { AiOutlineStar } from "react-icons/ai";
 import styles from "./Card.module.css";
 
-const Card = () => {
+const Card = ({ name, imageUrl }) => {
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      style={{ backgroundImage: `url(${imageUrl})` }}
+    >
       {/*Favorite Star */}
-      <div>
+      <div className={styles.icon}>
         <AiOutlineStar size={25} />
       </div>
-      <div>
-        <p>Name</p>
+      <div className={styles.title}>
+        <p>{name}</p>
       </div>
     </div>
   );

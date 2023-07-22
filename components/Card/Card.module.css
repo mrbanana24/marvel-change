@@ -1,6 +1,36 @@
-.card{
+.card {
+  position: relative;
   width: 256px;
   height: 380px;
   opacity: 1;
   border: solid 1px black;
+}
+
+.icon {
+  position: absolute;
+  /* Cambiamos a posición absoluta */
+  top: 10px;
+  /* Ajustamos la posición arriba */
+  right: 10px;
+  /* Ajustamos la posición a la derecha */
+  width: 20px;
+  height: 19px;
+  opacity: 1;
+}
+
+.title {
+  position: absolute;
+  /* Cambiamos a posición absoluta */
+  bottom: 32px;
+  /* Ajustamos la posición abajo */
+  left: 20px;
+  /* Ajustamos la posición a la izquierda */
+  width: 100%;
+  /* Aseguramos que el título ocupe todo el ancho del contenedor */
+  height: 23px;
+  text-align: left;
+  font: normal normal bold 19px/23px SF UI Text;
+  letter-spacing: -0.25px;
+  color: #FFFFFF;
+  opacity: 1;
 }
