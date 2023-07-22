@@ -1,6 +1,6 @@
-.container{
-  display: flex;
-  width: 100px;
-  height: 100px;
+.card{
+  width: 256px;
+  height: 380px;
+  opacity: 1;
   border: solid 1px black;
 }

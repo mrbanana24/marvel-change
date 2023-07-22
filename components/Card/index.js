@@ -4,7 +4,7 @@ import styles from "./Card.module.css";
 
 const Card = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.card}>
       {/*Favorite Star */}
       <div>
         <AiOutlineStar size={25} />

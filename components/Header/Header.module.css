@@ -1,16 +1,15 @@
+/* Common styles for the header */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
   height: 7vh;
   box-shadow: -2px 4px 41px -15px rgba(0, 0, 0, 0.84);
+  margin-right: 17px;
 }
 
+/* Logo container */
 .logo {
   position: relative;
   height: 90%;
@@ -19,15 +18,16 @@
   align-items: center;
   margin: 0 auto;
   display: flex;
-  /* Agregamos flex para centrar la imagen */
 }
 
+/* Logo image */
 .logo img {
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
 
+/* Search container */
 .search {
   flex: 1;
   display: flex;
@@ -39,16 +39,18 @@
   color: #a8a8a8;
 }
 
+/* Search icon */
 .biSearch {
-  color: #A8A8A8;
+  color: #a8a8a8;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 5%;
+  width: 10%;
   padding: 15px;
 }
 
+/* Search input */
 .searchInput {
   flex: 1;
   height: 100%;
@@ -68,12 +70,48 @@
   font-size: 15px;
 }
 
+/* Favorites icon */
 .favorites {
   display: flex;
   align-items: center;
   height: 100%;
-  width: 5%;
+  width: 10%;
   padding: 15px;
   justify-content: center;
-  color: #A8A8A8;
+  color: #a8a8a8;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+
+  /* Adjust the logo size to fit better on smaller screens */
+  .logo {
+    width: 15%;
+  }
+
+  /* Reduce the search icon and favorites icon size */
+  .biSearch,
+  .favorites {
+    width: 8%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+
+  /* Hide the favorites icon on the smallest screens */
+  .favorites {
+    display: none;
+  }
+
+  /* Adjust the logo size to fit better on the smallest screens */
+  .logo {
+    width: 20%;
+  }
+
+  /* Reduce the search icon size on the smallest screens */
+  .biSearch {
+    width: 12%;
+    padding: 8px;
+  }
 }
