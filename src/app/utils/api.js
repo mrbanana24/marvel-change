@@ -24,9 +24,10 @@ export const getCharacterById = async (id) => {
   return data;
 };
 
+// Los comics deben estar ordenados por fecha
 export const getComicByCharacterId = async (id) => {
   const response = await fetch(
-    `${API_BASE_URL}characters/${id}/comics?${query}`
+    `${API_BASE_URL}characters/${id}/comics?${query}&orderBy=-onsaleDate`
   );
   const data = await response.json();
   return data;
