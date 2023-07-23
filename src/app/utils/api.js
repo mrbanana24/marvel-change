@@ -31,3 +31,11 @@ export const getComicByCharacterId = async (id) => {
   const data = await response.json();
   return data;
 };
+
+export const searchCharacters = async (querySearch) => {
+  const response = await fetch(
+    `${API_BASE_URL}/characters?nameStartsWith=${querySearch}&limit=99&${query}`
+  );
+  const data = await response.json();
+  return data;
+};

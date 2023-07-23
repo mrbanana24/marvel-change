@@ -1,12 +1,25 @@
-import React from "react";
+"use client";
+
+import { React, useState } from "react";
 import styles from "./Header.module.css";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
 import Image from "next/image";
 import logoMarvel from "../../public/Marvel_Logo.svg.png";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const [search, setSearch] = useState("");
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      setSearch("");
+      router.push(`/search?query=${search}`);
+    }
+  };
+
   return (
     <header className={styles.header}>
       {/* Logo */}
@@ -22,7 +35,13 @@ const Header = () => {
           <BiSearch size={25} />
         </div>
         <div className={styles.searchInput}>
-          <input type="text" placeholder="Buscar" />
+          <input
+            type="text"
+            placeholder="Buscar"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={handleSearch}
+          />
         </div>
       </div>
 
