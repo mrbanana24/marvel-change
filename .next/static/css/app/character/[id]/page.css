@@ -1,7 +1,7 @@
-/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/CardList/CardList.module.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************/
-.CardList_cardList__F31EC{
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/ComicList/CardList.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
+.CardList_cardList__cB5x8{
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 
-.CardList_card__3vSsC{
+.CardList_card__gELK2{
   display: flex;
   flex-direction: row;
   height: 60%;
@@ -23,40 +23,40 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.CardList_image__Y9I7S{
+.CardList_image__noqcC{
   width: 30%;
   height: 100%;
 }
 
-.CardList_image__Y9I7S img{
+.CardList_image__noqcC img{
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.CardList_containerContent___7MmX{
+.CardList_containerContent__sINn_{
   width: 70%;
   height: 100%;
 }
 
-.CardList_title__alwwZ{
+.CardList_title__6u9r_{
   font-size: 1rem;
   font-weight: bold;
 }
 
-.CardList_title__alwwZ h2{
+.CardList_title__6u9r_ h2{
   text-align: center;
 }
   
-.CardList_description__E6_M8{
+.CardList_description__Z4Dwp{
   width: 90%;
   margin-left: 10px;
   font-size: 1.1rem;
   font-weight: normal;
 }
 
-.CardList_description__E6_M8 p{
+.CardList_description__Z4Dwp p{
   text-align: left;
   letter-spacing: NaNpx;
   color: #3E3E3E;

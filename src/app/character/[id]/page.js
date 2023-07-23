@@ -1,6 +1,6 @@
 import { getCharacterById, getComicByCharacterId } from "../../utils/api";
 import CardDetail from "../../../../components/CardDetail";
-import CardList from "../../../../components/CardList";
+import CardList from "../../../../components/ComicList";
 import styles from "./CharacterPage.module.css";
 
 // Datos de ejemplo para la lista de cards
