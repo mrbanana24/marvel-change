@@ -5,7 +5,6 @@ import styles from "./CharacterPage.module.css";
 
 const CharacterPage = async ({ params }) => {
   const { id } = params;
-  console.log(id);
   const response = await getCharacterById(id);
   const comics = await getComicByCharacterId(id);
 
