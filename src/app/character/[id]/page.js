@@ -3,8 +3,6 @@ import CardDetail from "../../../../components/CardDetail";
 import CardList from "../../../../components/ComicList";
 import styles from "./CharacterPage.module.css";
 
-// Datos de ejemplo para la lista de cards
-
 const CharacterPage = async ({ params }) => {
   const { id } = params;
   console.log(id);

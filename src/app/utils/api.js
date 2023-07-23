@@ -24,6 +24,12 @@ export const getCharacterById = async (id) => {
   return data;
 };
 
+export const getComicById = async (id) => {
+  const response = await fetch(`${API_BASE_URL}comics/${id}?${query}`);
+  const data = await response.json();
+  return data;
+};
+
 // Los comics deben estar ordenados por fecha
 export const getComicByCharacterId = async (id) => {
   const response = await fetch(

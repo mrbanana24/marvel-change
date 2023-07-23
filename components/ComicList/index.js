@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import styles from "./CardList.module.css";
+import Link from "next/link";
 
 const CardList = ({ data }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -25,7 +26,8 @@ const CardList = ({ data }) => {
             <h2>{item.title}</h2>
           </div>
           <div className={styles.description}>
-            <p>{item.description}</p>
+            {/* la descripcion tiene un limite de 30 palabras */}
+            <p> {item.description?.split(" ").slice(0, 30).join(" ")}... </p>
           </div>
         </div>
       </div>
@@ -45,7 +47,11 @@ const CardList = ({ data }) => {
 
   return (
     <div className={styles.cardList} ref={cardListRef}>
-      {data.map((item) => renderCard(item))}
+      {data.map((item) => (
+        <Link className={styles.link} key={item.id} href={`/comic/${item.id}`}>
+          {renderCard(item)}
+        </Link>
+      ))}
     </div>
   );
 };

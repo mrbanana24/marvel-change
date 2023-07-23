@@ -12,17 +12,23 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/search/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/search/page.css",
+      "static/chunks/app/search/page.js"
+    ],
     "/character/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/character/[id]/page.css",
       "static/chunks/app/character/[id]/page.js"
     ],
-    "/search/page": [
+    "/comic/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/search/page.css",
-      "static/chunks/app/search/page.js"
+      "static/css/app/comic/[id]/page.css",
+      "static/chunks/app/comic/[id]/page.js"
     ]
   }
 }
