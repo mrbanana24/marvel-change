@@ -35,7 +35,7 @@ const searchPage = () => {
         <h2>Loading...</h2>
       ) : (
         characters.map((character) => (
-          <Link href={`/character/${character.id}`}>
+          <Link key={character.id} href={`/character/${character.id}`}>
             <Card
               key={character.id}
               name={character.name}
@@ -44,7 +44,6 @@ const searchPage = () => {
           </Link>
         ))
       )}
-
       {characters.length === 0 && <h2>No results found</h2>}
     </div>
   );
