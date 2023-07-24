@@ -28,3 +28,18 @@ logs
 # Build cache
 .cache/
 .next/
+
+# .next cache files
+.next/cache/
+
+# .next server files
+.next/server/
+
+# .next build files
+.next/app-build-manifest.json
+
+# .next webpack files
+.next/cache/webpack/
+
+# .next layout chunk file
+.next/static/chunks/app/layout.js
