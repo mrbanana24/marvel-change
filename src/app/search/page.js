@@ -6,7 +6,7 @@ import Card from "../../../components/Card";
 import Style from "./Search.module.css";
 import Link from "next/link";
 
-const searchPage = () => {
+const SearchPage = () => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
   const searchParams = useSearchParams();
@@ -49,4 +49,4 @@ const searchPage = () => {
   );
 };
 
-export default searchPage;
+export default SearchPage;

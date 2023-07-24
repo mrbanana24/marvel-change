@@ -15,8 +15,15 @@ const Header = () => {
 
   const handleSearch = (e) => {
     if (e.key === "Enter") {
-      setSearch("");
-      router.push(`/search?query=${search}`);
+      if (search === "") {
+        return;
+      } else if (search.includes("http")) {
+        // Obtengo el id de la url y voy a la página del comic
+        const id = search.split("/")[5];
+        router.push(`/comic/${id}`);
+      } else {
+        router.push(`/search?query=${search}`);
+      }
     }
   };
 
