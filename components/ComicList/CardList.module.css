@@ -1,4 +1,4 @@
-.cardList{
+.cardList {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -6,65 +6,62 @@
   width: 100%;
   box-sizing: border-box;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
-.link{
+.link {
   text-decoration: none;
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
-.card{
+.card {
   display: flex;
   flex-direction: row;
-  height: 90%;
-  width: 90%;
+  width: 100%;
   margin-top: 10px;
   border-radius: 10px;
   background-color: #f5f5f5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.image{
+.image {
   width: 30%;
   height: 100%;
 }
 
-.image img{
+.image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.containerContent{
+.containerContent {
   width: 70%;
   height: 100%;
 }
 
-.title{
+.title {
   font-size: 1rem;
   font-weight: bold;
-}
-
-.title h2{
   text-align: center;
 }
-  
-.description{
+
+.description {
   width: 90%;
   margin-left: 10px;
   font-size: 1.1rem;
   font-weight: normal;
 }
 
-.description p{
+.description p {
   text-align: left;
-  letter-spacing: NaNpx;
-  color: #3E3E3E;
+  letter-spacing: normal;
+  color: #3e3e3e;
   opacity: 1;
   overflow-wrap: break-word;
 }
@@ -72,20 +69,15 @@
 @media screen and (max-width: 768px) {
   .card {
     flex-direction: column;
-    /* Cambiamos la dirección del flex para que los elementos se apilen verticalmente */
     height: auto;
-    /* Quitamos la altura fija para que la card se ajuste al contenido */
   }
 
   .image {
     width: 100%;
-    /* La imagen ocupa el 100% del ancho */
     height: auto;
-    /* La altura se ajustará automáticamente según el tamaño de la imagen */
   }
 
   .containerContent {
     display: none;
-    /* Ocultamos el contenedor de los detalles */
   }
 }
