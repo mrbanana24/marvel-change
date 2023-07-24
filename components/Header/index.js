@@ -14,7 +14,7 @@ const Header = () => {
   const router = useRouter();
 
   const handleSearch = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" || e.type === "click") {
       if (search === "") {
         return;
       } else if (search.includes("http")) {
@@ -38,7 +38,7 @@ const Header = () => {
 
       {/* Buscador en el centro */}
       <div className={styles.search}>
-        <div className="biSearch">
+        <div className="biSearch" onClick={handleSearch}>
           <BiSearch size={25} />
         </div>
         <div className={styles.searchInput}>
