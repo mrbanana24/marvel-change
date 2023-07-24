@@ -1,4 +1,3 @@
-/* container ocupa lo mismo que el padre y esta en el centro de la pantalla*/
 .container {
   display: flex;
   width: 95vw;
@@ -6,14 +5,12 @@
   margin: auto;
 }
 
-/* cardDetail es un contenedor que ocupa la mitad izquierda de la pantalla */
 .cardDetail{
   width: 50%;
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* cardList es un contenedor que ocupa la mitad derecha de la pantalla */
 .cardList{
   width: 50%;
   padding: 20px;
@@ -23,12 +20,10 @@
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
-    /* Cambiar la dirección del flex para que los elementos se apilen verticalmente */
   }
 
   .cardDetail,
   .cardList {
-    width: 100%;
-    /* Ambos ocupan el 100% del ancho cuando la pantalla es más pequeña */
+    width: 100%; 
   }
 }

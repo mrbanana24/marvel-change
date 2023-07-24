@@ -2,8 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  margin: 7%;
+  margin: 5%;
   justify-content: center;
-  /* Alinea las cartas al centro */
 }
 
