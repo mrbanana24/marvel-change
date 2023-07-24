@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build files
+.next/
+out/
+
+# Local development files
+.env.local
+.env.*.local
+
+# Log files
+logs
+*.log
+
+# Editor specific files
+.vscode/
+.idea/
+
+# Mac files
+.DS_Store
+
+# Temporary files
+*.hot-update.js
+
+# Build cache
+.cache/
+.next/
