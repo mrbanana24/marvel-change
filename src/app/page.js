@@ -19,12 +19,11 @@ const Home = () => {
   return (
     <div className={styles.container}>
       {characters.map((character) => (
-        <Link key={character.id} href={`/character/${character.id}`}>
+        <Link href={`/character/${character.id}`} key={character.id}>
           <Card
             id={character.id}
             name={character.name}
             imageUrl={`${character.thumbnail.path}.${character.thumbnail.extension}`}
-            priority
           />
         </Link>
       ))}

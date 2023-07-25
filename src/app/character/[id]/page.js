@@ -12,7 +12,9 @@ const CharacterPage = async ({ params }) => {
     <div className={styles.container}>
       {/* primera mitad de la pantalla */}
       <div className={styles.cardDetail}>
-        <CardDetail character={response.data.results[0]} />
+        {response.data.results[0] && (
+          <CardDetail character={response.data.results[0]} />
+        )}
       </div>
       {/* segunda mitad de la pantalla */}
       <div className={styles.cardList}>

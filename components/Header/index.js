@@ -36,7 +36,7 @@ const Header = () => {
 
       {/* Buscador en el centro */}
       <div className={styles.search}>
-        <div className="biSearch" onClick={handleSearch}>
+        <div className={styles.biSearch} onClick={handleSearch}>
           <BiSearch size={25} />
         </div>
         <div className={styles.searchInput}>

@@ -6,13 +6,13 @@ import styles from "./Card.module.css";
 const Card = ({ id, name, imageUrl }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // handleFavorites guarda o elimina el ID como key y name y url como value del personaje en localStorage para luego mostrarlo en la página de favoritos
-  const handleFavorites = () => {
+  const handleFavorites = (e) => {
+    e.stopPropagation();
+
     if (localStorage.getItem(id)) {
       localStorage.removeItem(id);
       setIsFavorite(false);
     } else {
-      // Si el personaje no está en localStorage, lo guardamos
       localStorage.setItem(
         id,
         JSON.stringify({
@@ -24,7 +24,6 @@ const Card = ({ id, name, imageUrl }) => {
     }
   };
 
-  // Comprobamos si el ID del personaje está en localStorage para mostrarlo como favorito
   useEffect(() => {
     if (localStorage.getItem(id)) {
       setIsFavorite(true);

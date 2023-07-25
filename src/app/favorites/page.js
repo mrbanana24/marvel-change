@@ -21,14 +21,8 @@ const Favorites = () => {
       {favorites.map((favorite) => {
         const { name, imageUrl } = JSON.parse(localStorage.getItem(favorite));
         return (
-          <Link href={`/character/${favorite}`}>
-            <Card
-              key={favorite}
-              id={favorite}
-              name={name}
-              imageUrl={imageUrl}
-              priority
-            />
+          <Link key={favorite} href={`/character/${favorite}`}>
+            <Card id={favorite} name={name} imageUrl={imageUrl} priority />
           </Link>
         );
       })}
