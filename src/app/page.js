@@ -11,8 +11,10 @@ const Home = async () => {
         <Link href={`/character/${character.id}`}>
           <Card
             key={character.id}
+            id={character.id}
             name={character.name}
             imageUrl={`${character.thumbnail.path}.${character.thumbnail.extension}`}
+            priority
           />
         </Link>
       ))}

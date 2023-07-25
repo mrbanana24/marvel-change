@@ -54,7 +54,9 @@ const Header = () => {
 
       {/* Botón de favoritos a la derecha */}
       <div className={styles.favorites}>
-        <AiOutlineStar size={25} />
+        <Link href="/favorites">
+          <AiOutlineStar size={25} />
+        </Link>
       </div>
     </header>
   );

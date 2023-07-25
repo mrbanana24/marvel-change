@@ -58,6 +58,15 @@
   text-align: center;
 }
 
+.title h2{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #3e3e3e;
+  opacity: 1;
+}
+
 .description {
   width: 90%;
   margin-left: 10px;
@@ -66,6 +75,9 @@
 }
 
 .description p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
   text-align: left;
   letter-spacing: normal;
   color: #3e3e3e;
