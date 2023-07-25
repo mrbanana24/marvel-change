@@ -1,6 +1,5 @@
 "use client";
-
-import { React, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.css";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineStar } from "react-icons/ai";
@@ -18,7 +17,6 @@ const Header = () => {
       if (search === "") {
         return;
       } else if (search.includes("http")) {
-        // Obtengo el id de la url y voy a la página del comic
         const id = search.split("/")[5];
         router.push(`/comic/${id}`);
       } else {
