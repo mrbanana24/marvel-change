@@ -12,8 +12,15 @@ const timeStamp = getTimeStamp();
 const hash = getHash(timeStamp);
 const query = `ts=${timeStamp}&apikey=${API_PUBLIC_KEY}&hash=${hash}`;
 
-export const getCharacters = async () => {
-  const response = await fetch(`${API_BASE_URL}characters?${query}&limit=8`);
+export const getCharacters = async (random = false) => {
+  let endpoint = `${API_BASE_URL}characters?${query}&limit=8`;
+
+  if (random) {
+    const offset = Math.floor(Math.random() * 1485); // Total number of characters in the Marvel API
+    endpoint = `${API_BASE_URL}characters?${query}&limit=8&offset=${offset}`;
+  }
+
+  const response = await fetch(endpoint);
   const data = await response.json();
   return data;
 };
