@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import styles from "./Card.module.css";
 
@@ -11,7 +11,6 @@ const Card = ({ id, name, imageUrl }) => {
     if (localStorage.getItem(id)) {
       localStorage.removeItem(id);
       setIsFavorite(false);
-      console.log("Eliminado de favoritos", id);
     } else {
       // Si el personaje no está en localStorage, lo guardamos
       localStorage.setItem(
@@ -22,7 +21,6 @@ const Card = ({ id, name, imageUrl }) => {
         })
       );
       setIsFavorite(true);
-      console.log("Añadido a favoritos", name);
     }
   };
 
@@ -37,7 +35,11 @@ const Card = ({ id, name, imageUrl }) => {
     <div className={styles.card}>
       <img src={imageUrl} alt={name} className={styles.image} />
 
-      <div onClick={handleFavorites} className={styles.icon}>
+      <div
+        onClick={handleFavorites}
+        className={styles.icon}
+        data-testid="favorite-icon"
+      >
         {isFavorite ? <AiFillStar size={25} /> : <AiOutlineStar size={25} />}
       </div>
 
