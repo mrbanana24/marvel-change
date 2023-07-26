@@ -19,7 +19,15 @@ const Favorites = () => {
   return (
     <div className={styles.container}>
       {favorites.map((favorite) => {
-        const { name, imageUrl } = JSON.parse(localStorage.getItem(favorite));
+        let parsedData;
+        try {
+          parsedData = JSON.parse(localStorage.getItem(favorite));
+        } catch (error) {
+          console.error("Error parsing favorite data:", error);
+          return null;
+        }
+
+        const { name, imageUrl } = parsedData;
         return (
           <Link key={favorite} href={`/character/${favorite}`}>
             <Card id={favorite} name={name} imageUrl={imageUrl} priority />
