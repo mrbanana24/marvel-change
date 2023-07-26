@@ -1,13 +1,29 @@
+// Configuracion de Jest con vite
 module.exports = {
-  testEnvironment: "jest-environment-jsdom",
-  testPathIgnorePatterns: ["/node_modules/", "/.next/"],
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  verbose: true,
   testEnvironment: "jsdom",
-  transform: {
-    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
-  },
+  moduleFileExtensions: ["js", "jsx"],
   moduleNameMapper: {
-    "\\.(css|less|sass|scss)$": "identity-obj-proxy",
-    "\\.(png|jpg|jpeg|gif|svg)$": "identity-obj-proxy",
+    "^@/(.*)$": "<rootDir>/src/$1",
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
+  transform: {
+    "^.+\\.(js|jsx)$": [
+      "babel-jest",
+      {
+        presets: ["@babel/preset-env", "@babel/preset-react"],
+      },
+    ],
+  },
+  testMatch: ["**/__tests__/**/*.js?(x)", "**/?(*.)+(spec|test).js?(x)"],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx}",
+    "!src/**/*.stories.{js,jsx}",
+    "!src/**/*.styles.{js,jsx}",
+    "!src/**/*.test.{js,jsx}",
+    "!src/**/index.{js,jsx}",
+    "!src/**/index.js",
+  ],
+  coverageDirectory: "<rootDir>/coverage/",
+  coverageReporters: ["text", "lcov", "clover"],
 };

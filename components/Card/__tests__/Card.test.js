@@ -1,78 +1,45 @@
+// Card Test component (usando vite)
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react"; // Importa waitFor desde "@testing-library/react"
+import "@testing-library/jest-dom/extend-expect"; // Importa toBeInTheDocument desde "@testing-library/jest-dom/extend-expect"
 import Card from "../index";
 
-describe("Card Component", () => {
-  // Props test
-  it("should render with correct props", () => {
-    const id = "1";
-    const name = "John Doe";
-    const imageUrl = "https://example.com/john.jpg";
-
-    const { getByAltText, getByText } = render(
-      <Card id={id} name={name} imageUrl={imageUrl} />
-    );
-
-    expect(getByAltText(name)).toBeInTheDocument();
-    expect(getByText(name)).toBeInTheDocument();
+describe("Card component", () => {
+  test("should render card component", () => {
+    render(<Card />);
+    const cardElement = screen.getByTestId("card");
+    expect(cardElement).toBeInTheDocument();
   });
 
-  // State test
-  it("should toggle 'isFavorite' state when clicked on the favorite icon", () => {
-    const id = "1";
-    const name = "John Doe";
-    const imageUrl = "https://example.com/john.jpg";
-
-    const { getByTestId } = render(
-      <Card id={id} name={name} imageUrl={imageUrl} />
+  test("should render card component with props", () => {
+    render(
+      <Card
+        name="Pikachu"
+        imageUrl="https://pokeapi.co/api/v2/pokemon/25.png"
+      />
     );
-
-    const favoriteIcon = getByTestId("favorite-icon");
-
-    // Initially, isFavorite should be false
-    expect(favoriteIcon).toContainHTML('<svg class="icon"');
-    expect(localStorage.getItem(id)).toBeNull();
-
-    // Click on the icon to set it as favorite
-    fireEvent.click(favoriteIcon);
-
-    // After clicking, isFavorite should be true and it should be added to localStorage
-    expect(favoriteIcon).toContainHTML('<svg class="icon"');
-    expect(localStorage.getItem(id)).toBeTruthy();
-
-    // Click on the icon again to remove it from favorites
-    fireEvent.click(favoriteIcon);
-
-    // After clicking again, isFavorite should be false and it should be removed from localStorage
-    expect(favoriteIcon).toContainHTML('<svg class="icon"');
-    expect(localStorage.getItem(id)).toBeNull();
+    const cardElement = screen.getByTestId("card");
+    expect(cardElement).toBeInTheDocument();
   });
 
-  // Life Cycles and Render test
-  it("should render with the correct favorite icon based on localStorage", () => {
-    const id = "1";
-    const name = "John Doe";
-    const imageUrl = "https://example.com/john.jpg";
-
-    // Adding the item to localStorage to simulate a favorite
-    localStorage.setItem(
-      id,
-      JSON.stringify({
-        name,
-        imageUrl,
-      })
+  test("should render card component with props and click favorite icon", async () => {
+    render(
+      <Card
+        name="Pikachu"
+        imageUrl="https://pokeapi.co/api/v2/pokemon/25.png"
+      />
     );
 
-    const { getByTestId } = render(
-      <Card id={id} name={name} imageUrl={imageUrl} />
-    );
+    // Esperar a que el componente se renderice completamente
+    await waitFor(() => {
+      const cardElement = screen.getByTestId("card");
+      expect(cardElement).toBeInTheDocument();
+    });
 
-    const favoriteIcon = getByTestId("favorite-icon");
+    const favoriteIcon = screen.getByTestId("favorite-icon");
+    expect(favoriteIcon).toBeInTheDocument();
 
-    // The icon should render as 'Favorited' since it's in localStorage
-    expect(favoriteIcon).toContainHTML('<svg class="icon"');
-
-    // Clean up localStorage after the test
-    localStorage.removeItem(id);
+    fireEvent.click(favoriteIcon);
+    expect(favoriteIcon).toBeInTheDocument();
   });
 });

@@ -1,9 +1,0 @@
-{
-  "jsc": {
-    "parser": {
-      "syntax": "ecmascript",
-      "tsx": true
-    },
-    "target": "es2021"
-  }
-}

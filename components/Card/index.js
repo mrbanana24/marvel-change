@@ -31,7 +31,7 @@ const Card = ({ id, name, imageUrl }) => {
   }, []);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} data-testid="card">
       <img src={imageUrl} alt={name} className={styles.image} />
 
       <div
