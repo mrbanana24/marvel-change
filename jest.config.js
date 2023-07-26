@@ -26,4 +26,9 @@ module.exports = {
   ],
   coverageDirectory: "<rootDir>/coverage/",
   coverageReporters: ["text", "lcov", "clover"],
+  transformIgnorePatterns: [
+    "/node_modules/",
+    "^.+\\.module\\.(css|sass|scss)$",
+    "^.+\\.(jpg|jpeg|png|gif|webp|svg)$",
+  ],
 };

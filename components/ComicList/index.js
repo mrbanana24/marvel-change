@@ -17,7 +17,7 @@ const CardList = ({ data }) => {
   // Función para renderizar una card
   const renderCard = (item) => {
     return (
-      <div key={item.id} className={styles.card}>
+      <div key={item.id} className={styles.card} data-testid="card">
         <div className={styles.image}>
           <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} />
         </div>
@@ -27,7 +27,7 @@ const CardList = ({ data }) => {
           </div>
           <div className={styles.description}>
             {/* la descripcion tiene un limite de 30 palabras */}
-            <p> {item.description?.split(" ").slice(0, 30).join(" ")}... </p>
+            <p>{item.description?.split(" ").slice(0, 30).join(" ")}...</p>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ const CardList = ({ data }) => {
   }, []);
 
   return (
-    <div className={styles.cardList} ref={cardListRef}>
+    <div className={styles.cardList} ref={cardListRef} data-testid="cardList">
       {data.map((item) => (
         <Link className={styles.link} key={item.id} href={`/comic/${item.id}`}>
           {renderCard(item)}
